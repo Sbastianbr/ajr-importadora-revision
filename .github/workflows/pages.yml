@@ -1,0 +1,41 @@
+name: Vista previa AJR (publicación manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_public_preview:
+        description: "Publicar revisión accesible por Internet, con autorización de la persona responsable"
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ajr-pages-preview
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: inputs.confirm_public_preview
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Obtener archivos
+        uses: actions/checkout@v6
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Preparar únicamente la web
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - name: Publicar vista previa
+        id: deployment
+        uses: actions/deploy-pages@v4
