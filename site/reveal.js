@@ -44,7 +44,7 @@
     }
     if (preference.matches || !("IntersectionObserver" in window)) return;
     try {
-      observer ||= new IntersectionObserver(reveal, { threshold: .08, rootMargin: "0px 0px -24px 0px" });
+      observer ||= new IntersectionObserver(reveal, { threshold: 0, rootMargin: "0px 0px 24px 0px" });
       pending.forEach(element => {
         if (!element.isConnected) { observer.unobserve(element); pending.delete(element); }
       });

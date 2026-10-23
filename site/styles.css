@@ -2114,7 +2114,7 @@ select,
 .whatsapp-floating {
   position: fixed;
   right: max(20px, env(safe-area-inset-right));
-  bottom: calc(20px + env(safe-area-inset-bottom) + var(--whatsapp-lift, 0px));
+  bottom: calc(20px + env(safe-area-inset-bottom));
   z-index: 35;
   width: 56px;
   height: 56px;
@@ -2234,7 +2234,7 @@ select,
   }
   .whatsapp-floating {
     right: max(16px, env(safe-area-inset-right));
-    bottom: calc(16px + env(safe-area-inset-bottom) + var(--whatsapp-lift, 0px));
+    bottom: calc(16px + env(safe-area-inset-bottom));
   }
 }
 @media (max-width: 600px) {
@@ -3221,7 +3221,7 @@ select,
   border-radius: 3px;
 }
 .ajr-revealing {
-  animation: ajr-reveal 560ms cubic-bezier(.22, .61, .36, 1) backwards;
+  animation: ajr-reveal 800ms cubic-bezier(.22, 1, .36, 1) backwards;
   animation-delay: var(--reveal-delay, 0ms);
 }
 @keyframes ajr-reveal {
@@ -3329,7 +3329,7 @@ select,
   text-align: center;
   text-wrap: balance;
 }
-#colegios .ajr-revealing { animation-name: ajr-school-reveal; animation-duration: 650ms; animation-timing-function: ease-out; }
+#colegios .ajr-revealing { animation-name: ajr-school-reveal; animation-duration: 800ms; animation-timing-function: cubic-bezier(.22, 1, .36, 1); }
 @keyframes ajr-school-reveal {
   from { opacity: 0; translate: 0 18px; }
   to { opacity: 1; translate: 0 0; }
@@ -3408,7 +3408,7 @@ select,
 #empresas .company-quote p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
 #empresas .company-quote .btn { gap: 12px; min-height: 60px; padding: 16px 24px; flex-shrink: 0; }
 #empresas .company-quote .btn > img { flex-shrink: 0; }
-#empresas .ajr-revealing { animation: ajr-company-reveal 650ms ease-out backwards; animation-delay: var(--reveal-delay, 0ms); }
+#empresas .ajr-revealing { animation: ajr-company-reveal 800ms cubic-bezier(.22, 1, .36, 1) backwards; animation-delay: var(--reveal-delay, 0ms); }
 @keyframes ajr-company-reveal { from { opacity: 0; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
 @media (max-width: 1024px) {
   #empresas .company-heading { gap: 24px; }
@@ -3498,7 +3498,7 @@ select,
 #deportes .sports-quote p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
 #deportes .sports-quote .btn { flex-shrink: 0; gap: 12px; min-height: 60px; padding: 16px 24px; }
 #deportes .sports-quote .btn > img { flex-shrink: 0; }
-#deportes .ajr-revealing { animation: ajr-sports-reveal 650ms ease-out backwards; animation-delay: var(--reveal-delay, 0ms); }
+#deportes .ajr-revealing { animation: ajr-sports-reveal 800ms cubic-bezier(.22, 1, .36, 1) backwards; animation-delay: var(--reveal-delay, 0ms); }
 @keyframes ajr-sports-reveal { from { opacity: 0; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
 @media (max-width: 1100px) {
   #deportes .sports-heading { gap: 28px; padding-inline: 0; }
@@ -3606,7 +3606,7 @@ select,
   border-color: var(--navy);
   outline-color: var(--navy);
 }
-#catalogo .ajr-revealing { animation: ajr-catalog-reveal 500ms ease-out backwards; animation-delay: var(--reveal-delay, 0ms); }
+#catalogo .ajr-revealing { animation: ajr-catalog-reveal 800ms cubic-bezier(.22, 1, .36, 1) backwards; animation-delay: var(--reveal-delay, 0ms); }
 @keyframes ajr-catalog-reveal { from { opacity: 0; translate: 0 12px; } to { opacity: 1; translate: 0 0; } }
 @media (max-width: 1024px) {
   #catalogo #products-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
