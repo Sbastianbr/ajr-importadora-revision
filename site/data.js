@@ -309,7 +309,9 @@ const AJR_DATA = {
       "name": "Polerón de algodón",
       "category": "Polerones de algodón",
       "type": "hoodie",
-      "photo": "",
+      "photo": "assets/productos/colegios/san-luis-poleron-algodon.webp",
+      "photoAlt": "Polerón negro con capucha y bolsillo delantero del Colegio San Luis, con escudo y bordado amarillo.",
+      "whatsappMessage": "Hola, vi una referencia por confirmar de Polerón de algodón (Colegio San Luis) en el catálogo de AJR. ¿Ofrecen esta prenda? ¿Pueden confirmar modelos, tallas, precio y disponibilidad?",
       "sizes": [],
       "price": null
     },
@@ -375,7 +377,9 @@ const AJR_DATA = {
       "name": "Polera de gimnasia",
       "category": "Poleras de gimnasia",
       "type": "tee",
-      "photo": "",
+      "photo": "assets/productos/colegios/british-polera-gimnasia.webp",
+      "photoAlt": "Polera de gimnasia blanca de The Antofagasta British School, con mangas negras, franjas rojas y escudo ABS.",
+      "whatsappMessage": "Hola, vi una referencia por confirmar de Polera de gimnasia (Antofagasta British School) en el catálogo de AJR. ¿Ofrecen esta prenda? ¿Pueden confirmar modelos, tallas, precio y disponibilidad?",
       "sizes": [],
       "price": null
     },

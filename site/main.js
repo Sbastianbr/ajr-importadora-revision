@@ -174,11 +174,11 @@ function catalogCard(p) {
   const crest = crestPath ? `<img class="product-crest" src="${esc(crestPath)}" alt="" loading="lazy" decoding="async" />` : "";
   const visual = pendingPhoto
     ? `<span class="mock-tag">Fotografía pendiente</span>${clothingArt(p.type, "#e1e5ea", "#8795a5", p.name)}`
-    : `<img class="product-photo" src="${esc(p.photo)}" alt="${esc(p.name)} — ${esc(context)}" loading="lazy" decoding="async" />`;
+    : `<img class="product-photo" src="${esc(p.photo)}" alt="${esc(p.photoAlt || `${p.name} — ${context}`)}" loading="lazy" decoding="async" />`;
   const label = p.line === "empresas" ? "Solicitar cotización" : "Consultar por WhatsApp";
   const message = `Hola, vi una referencia por confirmar de ${p.name} (${context}) en el catálogo de AJR. ¿Ofrecen esta prenda? ¿Pueden confirmar modelos, tallas, precio y disponibilidad?`;
-  const url = pendingPhoto
-    ? `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`
+  const url = p.whatsappMessage || pendingPhoto
+    ? `https://wa.me/${PHONE}?text=${encodeURIComponent(p.whatsappMessage || message)}`
     : whatsappUrl(p, info ? info.name : LINES_BY_ID.get(p.line).name);
   const meta = `${pendingPhoto ? "Referencia por confirmar · " : ""}${metaText(p)}`;
   return `<article class="product-card${pendingPhoto ? " catalog-pending" : ""}" data-product-id="${p.id}"><div class="product-art${pendingPhoto ? "" : " has-photo"}" data-bg="slate">${visual}</div><div class="product-details"><div class="product-context">${crest}<span class="product-school">${esc(context)}</span></div><h3>${esc(p.name)}</h3><p class="product-meta">${esc(meta)}</p><a class="product-cta" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${esc(`${label}: ${p.name}, ${context}${pendingPhoto ? ", referencia por confirmar" : ""} (se abre en una pestaña nueva)`)}"><span class="cta-full" aria-hidden="true">${label}</span><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>`;
